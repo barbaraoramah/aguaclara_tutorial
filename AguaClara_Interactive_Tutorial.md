@@ -139,7 +139,6 @@ plt.xlabel("Temperature in K")
 plt.ylabel("Reynold Numbers")
 plt.tight_layout()
 plt.show()
-
 ```
 <!--- Fill you answer here. --->
 

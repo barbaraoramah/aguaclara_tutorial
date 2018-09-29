@@ -47,6 +47,8 @@ print(volume)
 
 hydraulic_processes = ['flocculation', 'sedimentation', 'stirring']
 hydraulic_processes.append('filtration')
+hydraulic_processes[1] = '1 LPS'
+
 
 # Your answer here
 
@@ -76,7 +78,10 @@ c = False or not False and True or True
 
 does_it_work = 'maybe'
 
-# Your answer here
+if((a or b) and not c):
+    does_it_work = 'yes'
+else:
+    does_it_work = 'no'
 
 print(does_it_work)
 
