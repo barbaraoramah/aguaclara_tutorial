@@ -139,10 +139,6 @@ plt.xlabel("Temperature in K")
 plt.ylabel("Reynold Numbers")
 plt.tight_layout()
 plt.show()
-plt.savefig('./Imagess/Temp_Reynold.jpg')
-
-
-
 
 ```
 <!--- Fill you answer here. --->
