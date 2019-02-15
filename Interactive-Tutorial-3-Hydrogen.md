@@ -1,18 +1,15 @@
 # Using Python and Running it With Hydrogen in Markdown
 
 ## Running Code With Hydrogen
-1. Below this, I've copied the code I wrote for the [Writing Python](https://github.com/AguaClara/aguaclara_tutorial/wiki/Writing Python) tutorial. You should familiarize yourself with the different Hydrogen commands using this code. For the first line, use `Hydrogen: Run` (`Cmnd + Enter`).
+1. Below this, I've copied the code I wrote for the [Python Packages](https://aguaclara.github.io/aguaclara_tutorial/python-and-hydrogen/python-packages.html) tutorial. You should familiarize yourself with the different Hydrogen commands using this code. For the first line, use `Hydrogen: Run` (`Cmd + Enter`).
 2. For the second line, use `Hydrogen: Run and Move Down` (`Shift + Enter`).
 3. For the remaining code, highlight it with your cursor and use `Hydrogen: Run`. What is the difference between the three?
 
-Answer: The first two would make a checkmark next to the line of the code. For the last question, a plot was graphed using the `Hydrogen: Run` command.
-
 ```python
-from aide_design.play import*
+from aguaclara.play import *
 
 xArray = u.Quantity(np.arange(0.1, 0.5, 0.01), u.m)
 
-@u.wraps(None, [u.m / u.s, u.m, u.m ** 2 / u.s], False)
 def re_flat_plate(velocity, dist, nu):
   """This function calculates the Reynolds Number for flow past a plate using fluid velocity, plate length, and kinematic viscosity."""
   return (velocity * dist / nu)
@@ -45,11 +42,9 @@ else:
   print('x is not 1 or 10')
 ```
 
-
-
-
 2. Write a `for` loop that takes a variable with an initial value of 0, and adds the current index to the previous value of that variable (i.e. you variable should grow in size every iteration). Perform the iteration 20 times, and have the final value be printed at the end.
 
+<!--- Fill you answer here. --->
 ```python
 x = 0
 for i in range(0,20):
@@ -57,11 +52,13 @@ for i in range(0,20):
 
 print('x is:', x)
 ```
-<!--- Fill you answer here. --->
+
 
 
 
 3. Using the NumPy package and `unit_registry`, calculate the value of sin(4) meters, and use the sigfig function from the unit unit_registry module in aide_design to get your answer to 2 sig-figs. *(Hint: You will need to import these packages. Remember how to do that?)*
+
+<!--- Fill you answer here. --->
 
 ```python
 from aide_design.play import*
@@ -70,12 +67,10 @@ x=(np.sin(4)) * u.m
 print(x)
 
 ```
-<!--- Fill you answer here. --->
-
-
 
 4. Create a `list` of length 5, and verify the length of your list. Once you've done that, turn your `list` into an `array` and apply units of meters to it. After that, create a 5x5 `array`, extract the middle row and middle column. Verify the size of your 2D `array` and apply units of liters to it.
 
+<!--- Fill you answer here. --->
 ```python
 from aide_design.play import*
 
@@ -91,8 +86,6 @@ np.size(arrayTimes5)
 myArrayUnits = arrayTimes5 * u.L
 
 ```
-<!--- Fill you answer here. --->
-
 
 
 
@@ -114,19 +107,18 @@ from scipy.constants import Boltzmann as kB_sc # I've imported the unitless valu
 
 kB = kB_sc * u.joule / u.kelvin # I've given kB units for you in J/K; you can use the kB variable to give you Boltzmann's constant with units
 
+# Write your code here
 def dif_co(temp_k,radius_m):
   temp_k=temp_k * u.kelvin
   radius_m= radius_m * u.m
   vis = pc.viscosity_dynamic(temp_k)
-  D = kb * temp_k / (6*np.pi*radius_m*vis)
+  D = kB * temp_k / (6*np.pi*radius_m*vis)
   return D
-
-# Write your code here
-
 ```
 
 6. You have a pipe with a radius of 0.2 m with water flowing in it at 2 m<sup>3</sup>/s. You want to see how the Reynolds Number changes as viscosity changes due to a change in temperature from 0 to 200<sup>o</sup>C. Create a plot of Reynolds Number against Temperature in Kelvin to show a relationship. Make sure your plot has a title, labeled axes, and axes grid. You can use functions from `physchem` like `pc.re_pipe` and `pc.viscosity_kinematic`. *(Hint: Make an array of temperatures to input into the `pc.viscosity_kinematic` function)*. Make sure to save you plot to your images folder in your personal repository, and display it below using `plt.show()` and a relative file path to the image.
 
+<!--- Fill you answer here. --->
 ```python
 from aide_design.play import*
 T_array = np.arange(0,200)*u.degC
@@ -140,8 +132,6 @@ plt.ylabel("Reynold Numbers")
 plt.tight_layout()
 plt.show()
 ```
-<!--- Fill you answer here. --->
-
 
 # GitHub Basics
 Congratulations! You've completed this interactive tutorial. Now all you need to do is save your work and put it on your personal repository. Toggle the Git Tab using `Cntrl + Shift + 9`.
